@@ -6,7 +6,7 @@ urlGlobe = "http://localhost:3000/notes/";
 // -------------------------------------------------------------------
 
 /// Grabbing elements from HTML
-const PostNotes = document.getElementById("postNotes");
+const postNotes = document.getElementById("postNotes");
 const messageBox = document.getElementById("messageBox");
 
 async function PostNotesFunc() {
@@ -23,14 +23,14 @@ async function PostNotesFunc() {
         accept: "application/json",
       },
       body: JSON.stringify({
-        notes: PostNotes.value,
+        message: postNotes.value,
       }),
     });
 
     const jsonData = await response.json();
     console.log(jsonData.message);
 
-    messageDisplay.textContent = jsonData.message;
+    messageBox.textContent = jsonData.message;
   } catch (error) {
     console.log(error);
   }
