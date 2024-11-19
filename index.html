@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    * {
+    background-color: gainsboro;
+    font-family: monospace;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+;
+
+
+}
+
+
+
+.headings {
+    background-color: rgb(166, 166, 166);
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgb(166, 166, 166);
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    
+}
+
+h1 {
+
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 30px;
+
+}
+
+.form {
+    font-size: 20px;
+}
+</style>
+<title>Notes Page</title>
+</head>
+<body>
+    <iframe name="dummyFrame" id="dummyFrame" style="display: none"></iframe>
+<div>
+<h1 class="headings">Notes</h1>
+<br>
+<h2 class="headings">A place to jot down your thoughts</h2>
+<br>
+</div>
+<div>
+    <p>Post</p><input type="radio" title=" id="POST">
+</div>
+<br>
+<form name="Note" class="form" id="PostNotes" target="dummyFrame" onsubmit="this.submit(); this.reset() ;return false;">
+    <p>Type your thoughts: </p><textarea type="Type Something" id="postNotes"  placeholder="Input text here" rows="10" cols="70"></textarea><br>
+    <br>
+    <div>
+     <input onclick="PostNotesFunc()" type="submit" value="Submit" class="form">       
+    </div>
+    </form>
+
+    <div class = box>
+        <pre name="message"></pre>
+    </div>
+
+<script src="htmljavascript.js" type="text/javascript"></script>
+
+</body>
+</html>

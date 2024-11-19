@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "node ./note-controllers.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
