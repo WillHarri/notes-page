@@ -1,40 +1,66 @@
 let database = {};
 
-let idCount = 0
+//=====================================================
+
+// POST
+
+// Creating a new note
+
+let idCount = 0;
 function createNewNote(data) {
+  // generate id
+  let id;
+  if (idCount === 0) {
+    id = 0;
+    idCount = 1;
+  } else {
+    id = idCount;
+    idCount += 1;
+  }
 
+  // Generate constants
+  const date = String(new Date());
+  const idString = id.toString();
 
+  //add note to our database
+  database[idString] = {
+    _id: id,
+    date: date,
+    notes: data,
+  };
 
-    let id;
-    if (idCount === 0) {
-        id = 0;
-        idCount = 1
-    } else {
-        id = idCount
-        idCount =+ 1
-    }
-    
-    const date = String(new Date());
+  // send successful response object
+  const result = {
+    message: "You have added a new note.",
+    database: database,
+  };
 
-    const idString = id.toString();
+  console.log(database);
 
-    database[idString] = {
-        _id: id,
-        date: date,
-        notes: data,
-    };
-
-    const result = {
-        message: "You have added a new note.",
-        database: database,
-    };
-
-
-console.log (database)
-
-return result;
+  return result;
 }
 
+//=====================================================
+
+// GET
+
+// function to get note by id
+//=====================================================
+
+// PATCH
+
+// function to update a note given an id
+
+//=====================================================
+
+// DELETE
+
+// function to delete a note based on the id
+
+// function to delete all notes
+
+//-----------------------------------------------
+
 module.exports = {
-    createNewNote,
-    };
+  createNewNote,
+};
