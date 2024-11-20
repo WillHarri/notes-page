@@ -1,2 +1,3 @@
 # notes-page
-this is a repository for my notes application.
+
+This is a repository for my notes page application.
