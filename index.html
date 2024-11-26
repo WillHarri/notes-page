@@ -3,13 +3,15 @@
   <head>
     <style>
 
+      
+
       .heading-box {
           padding: 10px;
           margin: 1px;
           border: 1px solid;
           background-color: rgb(166, 166, 166);
           width: 500px;
-          display: flex;
+          display: inline-block;
           justify-self: center;
           align-items: center;
       }
@@ -17,7 +19,7 @@
       
       
       
-          * {
+      * {
           background-color: gainsboro;
           font-family: monospace;
           align-items: center;
@@ -57,6 +59,20 @@
       .form {
           font-size: 20px;
       }
+
+
+      .box {
+        /* border: 1px solid #000000; */
+        width: 500px;
+        height: 10px;
+        padding:10px;
+        margin: 5px;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        text-align: center;
+
+      }
       </style>
     <!---------------------------------------------------------------------------------->
 
@@ -69,11 +85,9 @@
   </head>
   <body>
     <iframe name="dummyFrame" id="dummyFrame" style="display: none"></iframe>
-    <div>
+    <div class="heading-box">
       <h1 class="headings">Notes</h1>
-      <br />
       <h2 class="headings">A place to jot down your thoughts</h2>
-      <br />
     </div>
     <div>
       <!-- SUBMITTING/POSTING A NOTE -->
@@ -84,7 +98,7 @@
     <br />
     <form
       name="Note"
-      class="form"
+      class="form "
       id="postNotesForm"
       target="dummyFrame"
       onsubmit="this.submit(); this.reset() ;return false;"
@@ -104,13 +118,19 @@
           onclick="PostNotesFunc()"
           type="submit"
           value="submit"
-          class="button1"
+          class="button"
         >
           Submit
         </button>
+        <br />
       </div>
+      <br>
       <div class="box" id="messageBox" name="messageBox"></div>
     </form>
+    <h2>Find a Note</h2>
+    <input type="number" class = "Number Select" placeholder="Input Note ID Here" id="idSelector">
+    <div class="box" id="noteBox" name="noteBox"></div>
+    <div class="box" id="dateBox" name="dateBox"></div>
     <script src="htmljavascript.js" type="text/javascript"></script>
   </body>
 </html>
