@@ -44,8 +44,18 @@ function createNewNote(data) {
 
 // GET
 
+function getNote(id) {
+  const noteGrabbedById = database [id]
+  console.log(noteGrabbedById)
+  console.log(`this is the id: ${id}`)
+  console.log(`This is our note of the id: ${database[id]}`);
+  console.log(typeof[id]);
+  return database[id]
+  }
+
 // function to get note by id
 //=====================================================
+
 
 // PATCH
 
@@ -63,4 +73,5 @@ function createNewNote(data) {
 
 module.exports = {
   createNewNote,
+  getNote,
 };

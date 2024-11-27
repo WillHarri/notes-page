@@ -41,3 +41,8 @@ app.post("/notes", async function (req, res) {
   const result = notesService.createNewNote(req.body.message);
   return res.status(201).json(result);
 });
+
+app.get("/notes/:_id", async function (req, res) {
+  const noteById = await notesService.getNote(req.params._id);
+  return res.status(200).send(noteById)
+})
