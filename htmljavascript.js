@@ -68,6 +68,8 @@ async function updateDisplay(id) {
     dateBox.textContent = jsonData.date;
   } catch (error) {
     console.log(error);
+    noteBox.textContent = 'Note not found.';
+    dateBox.textContent = '';
   }
 }
 
