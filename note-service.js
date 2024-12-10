@@ -31,7 +31,8 @@ function createNewNote(data) {
 
   // send successful response object
   const result = {
-    message: "You have added a new note.",
+    message_add: "You have added a new note.",
+    message_id: `Note ID: ${id}`,
     database: database,
   };
 
