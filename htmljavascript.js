@@ -10,6 +10,7 @@ const postNotes = document.getElementById("postNotes");
 const messageBox = document.getElementById("messageBox");
 
 
+
 async function PostNotesFunc() {
   console.log("PostNotesFunc");
   let id = "";
@@ -31,7 +32,8 @@ async function PostNotesFunc() {
     const jsonData = await response.json();
     console.log(jsonData.message);
 
-    messageBox.textContent = jsonData.message;
+    messageBox_add.textContent = jsonData.message_add;
+    messageBox_id.textContent = jsonData.message_id;
   } catch (error) {
     console.log(error);
   }
