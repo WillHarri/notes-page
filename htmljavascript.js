@@ -80,3 +80,33 @@ async function updateDisplay(id) {
 // -------------------------------------------------------------------
 // DEL
 // -------------------------------------------------------------------
+
+async function DeleteNotesFunc() {
+  console.log("DeleteNotesFunc");
+  let id = idSelector.value;
+  let HTTPmethod = "DELETE";
+
+  try {
+    const response = await fetch(urlGlobe + id, {
+      method: HTTPmethod,
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "application/json",
+      },
+      body: JSON.stringify({
+        message: postNotes.value,
+        
+      }),
+    });
+
+    const jsonData = await response.json();
+    console.log(jsonData.message);
+
+    messageBox_delete.textContent = jsonData.message_delete;
+    messageBox_id.textContent = jsonData.message_id;
+    updateDisplay(id);
+  } catch (error) {
+    console.log(error);
+  }
+}
