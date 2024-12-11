@@ -46,3 +46,8 @@ app.get("/notes/:_id", async function (req, res) {
   const noteById = await notesService.getNote(req.params._id);
   return res.status(200).send(noteById)
 })
+
+app.delete("/notes/:_id", async function (req, res) {
+  const noteById = await notesService.deleteNote(req.params._id);
+  return res.status(200).send(noteById)
+})

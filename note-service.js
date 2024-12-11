@@ -70,9 +70,33 @@ function getNote(id) {
 
 // function to delete all notes
 
+function deleteNote(id) {
+  const noteGrabbedById = database [id]
+  delete database[id];
+  console.log(noteGrabbedById)
+  console.log(`this is the id: ${id}`)
+  console.log(`This is our note of the id: ${database[id]}`);
+  console.log(typeof[id]);
+  // return database[id]
+  
+
+  // send successful response object
+  const result = {
+    message_delete: "You have deleted a note.",
+    message_id: `Note ID: ${id}`,
+    database: database,
+  };
+
+  console.log(database);
+
+  return result;
+}
+
+
 //-----------------------------------------------
 
 module.exports = {
   createNewNote,
   getNote,
+  deleteNote
 };
