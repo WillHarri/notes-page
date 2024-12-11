@@ -3,24 +3,39 @@
   <head>
     <style>
 
+      .body {
+        align-items: center;
+        justify-content: center;
+      }
+
+      .full-box {
+        width: 700px;
+        height: 100%;
+        border: 1px solid #52ab98;
+        padding: 10px;
+        margin: 1px;
+        background-color: #52ab98;
+        justify-self: center;
+        align-self: center;
+      } 
+
       
 
       .heading-box {
           padding: 10px;
           margin: 1px;
-          border: 1px solid;
-          background-color: rgb(166, 166, 166);
+          background-color: #428496;
           width: 500px;
-          display: inline-block;
+          display: flex-block;
           justify-self: center;
           align-items: center;
+          border-radius: 10px;
       }
       
       
       
       
       * {
-          background-color: gainsboro;
           font-family: monospace;
           align-items: center;
           justify-content: center;
@@ -38,12 +53,13 @@
       }
       
       .button:hover {
-          background-color: rgb(166, 166, 166);
+          background-color: #c8d8e4;
           transform: scale(1.1);
       }
       
       .headings {
-          background-color: rgb(166, 166, 166);
+        background-color: #428496;
+        width: 100%;
       }
       
       h1 {
@@ -84,9 +100,10 @@
     <title>Notes Page</title>
   </head>
   <body>
+    <section class="full-box">
     <iframe name="dummyFrame" id="dummyFrame" style="display: none"></iframe>
     <div class="heading-box">
-      <h1 class="headings">Notes</h1>
+      <h1 class="headings">YourNotes</h1>
       <h2 class="headings">A place to jot down your thoughts</h2>
     </div>
     <div>
@@ -143,5 +160,7 @@
       </button>
       <div class="box" id="messageBox_delete" name="messageBox_delete"></div>
     <script src="htmljavascript.js" type="text/javascript"></script>
+  </section>
   </body>
+  </html>
 </html>

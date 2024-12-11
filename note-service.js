@@ -29,6 +29,7 @@ function createNewNote(data) {
     notes: data,
   };
 
+
   // send successful response object
   const result = {
     message_add: "You have added a new note.",
